@@ -67,6 +67,18 @@ try {
     $dataForJson = [];
     
     foreach ($nodesWithLinks as $node) {
+        if (!in_array(
+            $node->tagName,
+            [
+                'a',
+                'link',
+                'script',
+                'img'
+            ]
+        )) {
+            continue;
+        }
+
         if ($node->hasAttribute('src')) {
             $link = $node->getAttribute('src');
         } else {

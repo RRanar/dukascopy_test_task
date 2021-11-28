@@ -11,3 +11,7 @@ RUN apt-get update -y && apt-get install -y \
     && docker-php-ext-install zip 
 
 WORKDIR /usr/share/local/cli-php
+
+COPY ./app .
+
+RUN composer install

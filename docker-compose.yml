@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: php-cli
+    build: ./
+    volumes:
+      - ./app:/usr/share/local/cli-php:rw,cached
+    
